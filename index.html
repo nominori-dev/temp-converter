@@ -6,18 +6,24 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Temperature Converter</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-	<h1>Конвертер температуры</h1>
-	<div class="form-group col-md-3">
-		<label for="usr">Цельсии:</label>
-		<input type="text" class="form-control" id="celcius" onkeyup="celciusToFahrenheit()">
+	<h1 class="header">Celcius to fahrenheit</h1>
+
+	<div class="inputs">
+
+		<div class="input">
+			<label for="usr">Celcius:</label>
+			<input type="text" class="form-control" name="input" id="celcius" onkeyup="celciusToFahrenheit()">
+		</div>
+	
+		<div class="input">
+			<label for="pwd">Fahrenheit:</label>
+			<input type="text" class="form-control" name="input" id="fahrenheit" onkeyup="fahrenheitToCelcius()">
+		</div>
 	</div>
 
-	<div class="form-group col-md-3">
-		<label for="pwd">Фаренгейты:</label>
-		<input type="text" class="form-control" id="fahrenheit" onkeyup="fahrenheitToCelcius()">
-	</div>
 
 	<script>
 		require('./render.js');
