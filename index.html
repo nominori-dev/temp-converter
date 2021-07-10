@@ -4,23 +4,37 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Temperature Converter</title>
+	<title>ConverterApp</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-	<h1 class="header">Celcius to fahrenheit</h1>
+	<style>
+		body {
+		  overflow-x: hidden;
+		}
+	  </style>
+	<h1 class="header">Modern Converter</h1>
 
 	<div class="inputs">
-
+		<div>
+			<label class="selectorLabel" for="usr">Convert mode: </label>
+			<select class="form-select" id="modeSelector" name="selection" aria-label="Default select example" onchange="updateValues()">
+				<option value="0"selected > Please Select</option>
+				<option value="1">Celcius to fahrenheit</option>
+				<option value="2">Seconds to minutes</option>
+				<option value="3">Grams to pounds</option>
+			  </select>
+		</div>
 		<div class="input">
-			<label for="usr">Celcius:</label>
-			<input type="text" class="form-control" name="input" id="celcius" onkeyup="celciusToFahrenheit()">
+			<label id="firstValueLabel" for="usr">Value</label>
+			<input type="text" class="form-control" name="input" id="firstValue" onkeyup="">
 		</div>
 	
 		<div class="input">
-			<label for="pwd">Fahrenheit:</label>
-			<input type="text" class="form-control" name="input" id="fahrenheit" onkeyup="fahrenheitToCelcius()">
+			<label id="secondValueLabel" class="secondLabel" for="pwd">Result</label>
+			<input type="text" class="form-control" name="input" id="secondValue" disabled>
+			<input type="submit" class="btn btn-secondary" name="submitButton" value="Convert" onclick="updateValues()">
 		</div>
 	</div>
 
@@ -28,17 +42,55 @@
 	<script>
 		require('./render.js');
 
-		function celciusToFahrenheit(){
-			let celcius = document.getElementById('celcius').value;
-			let fahrenheit = (celcius* 9/5) + 32;
-			document.getElementById('fahrenheit').value = fahrenheit;
+		function updateValues(){
+
+			var selector = document.getElementById("modeSelector");
+			var firstLabel = document.getElementById("firstValueLabel");
+			var secondLabel = document.getElementById("secondValueLabel");
+			var firstValue = document.getElementById("firstValue");
+			var secondValue = document.getElementById("secondValue");
+
+			var currentMode = selector.value;
+
+			switch(currentMode){
+				case '1':
+					firstValue.onkeyup = celciusToFahrenheit();
+					firstLabel.textContent = "Celcius";
+					secondLabel.textContent = "Fahrenheit"
+					break;
+				case '2':
+					firstValue.onkeyup = secondsToMinutes();
+					firstLabel.textContent = "Seconds";
+					secondLabel.textContent = "Minutes"
+					break;
+				case '3':
+					firstValue.onkeyup = gramsToPounds();
+					firstLabel.textContent = "Grams";
+					secondLabel.textContent = "Pounds"
+					break;
+				default:
+					break;
+			}
 		}
 
-		function fahrenheitToCelcius(){
-			let fahrenheit = document.getElementById('fahrenheit').value;
-			let celcius = (fahrenheit - 32) * 5/9
-			document.getElementById('celcius').value = celcius;
+		function secondsToMinutes(){
+			let seconds = document.getElementById('firstValue').value;
+			let minutes = seconds/60;
+			document.getElementById('secondValue').value = minutes;
 		}
+
+		function gramsToPounds(){
+			let grams = document.getElementById('firstValue').value;
+			let pounds = grams/454;
+			document.getElementById('secondValue').value = pounds;
+		}
+
+		function celciusToFahrenheit(){
+			let celcius = document.getElementById('firstValue').value;
+			let fahrenheit = (celcius* 9/5) + 32;
+			document.getElementById('secondValue').value = fahrenheit;
+		}
+
 	</script>
 </body>
 </html>
