@@ -24,6 +24,9 @@
 				<option value="1">Celcius to fahrenheit</option>
 				<option value="2">Seconds to minutes</option>
 				<option value="3">Grams to pounds</option>
+				<option value="4">Litres to milliliters</option>
+				<option value="5">Joules to kilocalories</option>
+				<option value="6">Megabits to megabytes</option>
 			  </select>
 		</div>
 		<div class="input">
@@ -56,21 +59,52 @@
 				case '1':
 					firstValue.onkeyup = celciusToFahrenheit();
 					firstLabel.textContent = "Celcius";
-					secondLabel.textContent = "Fahrenheit"
+					secondLabel.textContent = "Fahrenheit";
 					break;
 				case '2':
 					firstValue.onkeyup = secondsToMinutes();
 					firstLabel.textContent = "Seconds";
-					secondLabel.textContent = "Minutes"
+					secondLabel.textContent = "Minutes";
 					break;
 				case '3':
 					firstValue.onkeyup = gramsToPounds();
 					firstLabel.textContent = "Grams";
-					secondLabel.textContent = "Pounds"
+					secondLabel.textContent = "Pounds";
 					break;
+				case '4':
+					firstValue.onkeyup = litresToMilliliters();
+					firstLabel.textContent = "Litres";
+					secondLabel.textContent = "Milliliters";
+				case '5':
+					firstValue.onkeyup = joulesToKilocalories();
+					firstLabel.textContent = "Joules";
+					secondLabel.textContent = "Kilocalories";
+				case '6':
+					firstValue.onkeyup = megabitsToMegabytes();
+					firstLabel.textContent = "Megabits";
+					secondLabel.textContent = "Megabytes";
 				default:
 					break;
 			}
+		}
+
+
+		function megabitsToMegabytes(){
+			let megabits = document.getElementById('firstValue').value;
+			let megabytes = megabits / 8;
+			document.getElementById('secondValue').value = megabytes;
+		}
+
+		function joulesToKilocalories(){
+			let joules = document.getElementById('firstValue').value;
+			let kilocalories = joules / 4184;
+			document.getElementById('secondValue').value = kilocalories;
+		}
+
+		function litresToMilliliters(){
+			let litres = document.getElementById('firstValue').value;
+			let milliliters = litres * 1000;
+			document.getElementById('secondValue').value = milliliters;
 		}
 
 		function secondsToMinutes(){

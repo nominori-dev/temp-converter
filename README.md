@@ -1,11 +1,17 @@
 # temp-converter
 Temperature converter maded with node.js and electrone
 
+
+
+
 ## Current features
 
 * Celcius to fahrenheit
 * Seconds to minutes
 * Grams to pounds
+* Litres to millilitres
+* Joules to kilocalories
+* Megabits to megabytes
 
 ## Task list
 
@@ -13,10 +19,16 @@ Temperature converter maded with node.js and electrone
 - [x] basic html page with bootstrap
 - [x] basic stylesheet
 - [x] new modes(**Seconds**,**Grams**,**Celcius**)
-- [ ] more modes
+- [x] more modes
 
+## Technologies
 
-## Run and Build
+Project is created with:
+* JavaScript
+* Node.js v10.19.0
+* Electron.js 13.1.6
+
+## Setup
 
 Before running:
 
