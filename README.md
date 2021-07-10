@@ -1,6 +1,21 @@
 # temp-converter
 Temperature converter maded with node.js and electrone
 
+## Current features
+
+* Celcius to fahrenheit
+* Seconds to minutes
+* Grams to pounds
+
+## Task list
+
+- [x] build empty app
+- [x] basic html page with bootstrap
+- [x] basic stylesheet
+- [x] new modes(**Seconds**,**Grams**,**Celcius**)
+- [ ] more modes
+
+
 ## Run and Build
 
 Before running:
