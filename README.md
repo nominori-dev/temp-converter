@@ -1,4 +1,4 @@
-# :earth_americas: temp-converter
+# :earth_americas: Simple converter
 Temperature converter maded with node.js and electrone
 
 
