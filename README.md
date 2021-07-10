@@ -1,10 +1,10 @@
-# temp-converter
+# :earth_americas: temp-converter
 Temperature converter maded with node.js and electrone
 
 
 
 
-## Current features
+## :dizzy: Current features
 
 * Celcius to fahrenheit
 * Seconds to minutes
@@ -13,7 +13,7 @@ Temperature converter maded with node.js and electrone
 * Joules to kilocalories
 * Megabits to megabytes
 
-## Task list
+## :blossom: Task list
 
 - [x] build empty app
 - [x] basic html page with bootstrap
@@ -21,14 +21,14 @@ Temperature converter maded with node.js and electrone
 - [x] new modes(**Seconds**,**Grams**,**Celcius**)
 - [x] more modes
 
-## Technologies
+## :wine_glass: Technologies
 
 Project is created with:
 * JavaScript
 * Node.js v10.19.0
 * Electron.js 13.1.6
 
-## Setup
+## :barber: Setup
 
 Before running:
 
